@@ -13,7 +13,7 @@ namespace Nadezda.Gui.Framework.Controls
 
         public Color BackgroundColor { get; private set; }
 
-        public override Rectangle Rectangle { get; }
+        public override Rectangle Rectangle { get; set; }
         public override List<Control> Controls { get; set; }
 
         private bool _debug = false;
@@ -39,6 +39,7 @@ namespace Nadezda.Gui.Framework.Controls
         }
 
         public void SetSize(Rectangle rec) {
+            this.Rectangle = rec;
             Raylib.SetWindowSize((int)rec.width, (int)rec.height);
         }
         public override void Render()

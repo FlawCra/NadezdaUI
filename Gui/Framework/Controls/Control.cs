@@ -9,7 +9,7 @@ namespace Nadezda.Gui.Framework.Controls
 {
     public abstract class Control
     {
-        public abstract Rectangle Rectangle { get; }
+        public abstract Rectangle Rectangle { get; set; }
 
         public abstract List<Control> Controls { get; set; }
 
