@@ -27,11 +27,13 @@ namespace Nadezda.Gui.Framework.Controls
         }
 
         public void Show()
-        {
+        {   
+            Raylib.SetConfigFlags(ConfigFlags.FLAG_WINDOW_RESIZABLE);
             Raylib.InitWindow((int)Rectangle.width, (int)Rectangle.height, Title);
 
             while (!Raylib.WindowShouldClose())
             {
+                Update();
                 Render();
             }
 
@@ -49,7 +51,6 @@ namespace Nadezda.Gui.Framework.Controls
 
             foreach (Control c in Controls)
             {
-                c.Update();
                 c.Render();
             }
 
@@ -63,7 +64,10 @@ namespace Nadezda.Gui.Framework.Controls
 
         public override void Update()
         {
-            throw new NotImplementedException();
+            foreach (Control c in Controls)
+            {
+                c.Update();
+            }
         }
     }
 }
