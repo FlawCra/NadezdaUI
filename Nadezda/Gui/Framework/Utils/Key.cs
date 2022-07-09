@@ -4,7 +4,7 @@ namespace Nadezda.Gui.Framework.Utils
 {
     public class Key
     {
-        private String String = "";
+        private string String = "";
 
         private char Char;
         
@@ -18,11 +18,5 @@ namespace Nadezda.Gui.Framework.Utils
         {
             return this.String;
         }
-    }
-
-    public class KeyMap
-    {
-        
-        
     }
 }
