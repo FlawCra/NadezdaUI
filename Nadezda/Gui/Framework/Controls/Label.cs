@@ -12,7 +12,7 @@ namespace Nadezda.Gui.Framework.Controls
     {
         public override Rectangle Rectangle { get; set;}
 
-        public override List<Control> Controls { get; set; }
+        public override List<Control> Controls { get; set; } = new List<Control>();
 
         private string Text;
         private FontSize FontSize;

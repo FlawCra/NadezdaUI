@@ -13,7 +13,7 @@ namespace Nadezda.Gui.Framework.Controls
     {
         public override Rectangle Rectangle { get; set; }
 
-        public override List<Control> Controls { get; set; }
+        public override List<Control> Controls { get; set; } = new List<Control>();
 
         public string Text;
 
@@ -31,7 +31,7 @@ namespace Nadezda.Gui.Framework.Controls
             FontSize = fsize;
         }
 
-        public override async void Render()
+        public override void Render()
         {
             Raylib.DrawRectangleRounded(Rectangle, 5, 32, Color);
             if(IsHovering() && Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT))
@@ -46,30 +46,20 @@ namespace Nadezda.Gui.Framework.Controls
 
         public override void Update()
         {
-            if(IsHovering())
+            if(!IsHovering()) return;
+            if(!Raylib.IsMouseButtonReleased(MouseButton.MOUSE_LEFT_BUTTON)) return;
+            if (OnClick != null)
             {
-                if(Raylib.IsMouseButtonReleased(MouseButton.MOUSE_LEFT_BUTTON))
-                {
-                    if (OnClick != null)
-                    {
-                        OnClick(this);
-                    }
-                }
+                OnClick(this);
             }
         }
 
-        public bool IsHovering()
+        private bool IsHovering()
         {
             Rectangle mousePos = new Rectangle(Raylib.GetMousePosition().X, Raylib.GetMousePosition().Y,0,0);           // Get the position of the mouse
-            if (mousePos.x >= Rectangle.x && mousePos.x <= (Rectangle.x + Rectangle.width))
-            {
-                if (mousePos.y >= Rectangle.y && mousePos.y <= Rectangle.y + Rectangle.height)
-                {
-                    return true;
-                }
-            }
+            if(!(mousePos.x >= Rectangle.x) || !(mousePos.x <= (Rectangle.x + Rectangle.width))) return false;
+            return mousePos.y >= Rectangle.y && mousePos.y <= Rectangle.y + Rectangle.height;
 
-            return false;
         }
     }
 }

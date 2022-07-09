@@ -14,12 +14,11 @@ namespace Nadezda.Gui.Framework.Controls
         public Color BackgroundColor { get; private set; }
 
         public override Rectangle Rectangle { get; set; }
-        public override List<Control> Controls { get; set; }
+        public override List<Control> Controls { get; set; } = new List<Control>();
 
         private bool _debug = false;
 
-        public Window(Color bg, Rectangle rectangle, string title = "FlawCraGUI", bool debug = false) {
-            Controls = new List<Control>();
+        protected Window(Color bg, Rectangle rectangle, string title = "NadezdaUI Window", bool debug = false) {
             Title = title;
             Rectangle = rectangle;
             BackgroundColor = bg;
