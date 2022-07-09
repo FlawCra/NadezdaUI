@@ -44,9 +44,7 @@ namespace Nadezda.Gui.Framework.Controls
                     // NOTE: Only allow keys in range [32..125]
                     if (!(key == 259) && Text.Length < MaxInputChars)
                     {
-                        Console.WriteLine(key);
                         Text += new Key(key).ToString();
-                        Console.WriteLine(Text);
                     }
 
                     key = Raylib.GetCharPressed();  // Check next character in the queue
@@ -67,7 +65,7 @@ namespace Nadezda.Gui.Framework.Controls
         {
             Raylib.DrawRectangle((int)Rectangle.x, (int)Rectangle.y, (int)Rectangle.width, (int)Rectangle.height, ColorUtils.Lerp(Color, Color.BLACK, 0.25f));
             Raylib.DrawRectangle((int)Rectangle.x+2, (int)Rectangle.y+2, (int)Rectangle.width-4, (int)Rectangle.height-4, Color.WHITE);
-            if (MouseOnText) Raylib.DrawRectangleLines((int)Rectangle.x, (int)Rectangle.y, (int)Rectangle.width, (int)Rectangle.height, Color.RED);
+            if (MouseOnText) Raylib.DrawRectangleLines((int)Rectangle.x, (int)Rectangle.y, (int)Rectangle.width, (int)Rectangle.height, Color);
             else Raylib.DrawRectangleLines((int)Rectangle.x, (int)Rectangle.y, (int)Rectangle.width, (int)Rectangle.height, Color.DARKGRAY);
 
             Raylib.DrawText(Text, (int)Rectangle.x + 2, (int)Rectangle.y + 2, 20, Color.BLACK);
@@ -79,7 +77,7 @@ namespace Nadezda.Gui.Framework.Controls
                     // Draw blinking underscore char
                     if (blinkDeltaTime.GetDeltaTime().Milliseconds > 500)
                     {
-                        Raylib.DrawText("_", (int)Rectangle.x + 2 + Raylib.MeasureText(Text, 20), (int)Rectangle.y + 2, 20, Color.MAROON);
+                        Raylib.DrawText("_", (int)Rectangle.x + 2 + Raylib.MeasureText(Text, 20), (int)Rectangle.y + 2, 20, Color);
                     } else if(blinkDeltaTime.GetDeltaTime().Milliseconds > 1000)
                     {
                         blinkDeltaTime = DeltaTime.CreatePoint();
