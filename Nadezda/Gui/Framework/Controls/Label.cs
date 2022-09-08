@@ -10,7 +10,7 @@ namespace Nadezda.Gui.Framework.Controls
 {
     public class Label : Control
     {
-        public override Rectangle Rectangle { get; set;}
+        public override Rectangle Rectangle { get; set; }
 
         public override List<Control> Controls { get; set; } = new List<Control>();
 
@@ -33,7 +33,7 @@ namespace Nadezda.Gui.Framework.Controls
 
         public override void Update()
         {
-            
+
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Nadezda.Gui.Framework.Utils
         private string String = "";
 
         private char Char;
-        
+
         public Key(int keyCode)
         {
             this.Char = (char)keyCode;

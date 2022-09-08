@@ -34,10 +34,11 @@ namespace Nadezda.Gui.Framework.Controls
         public override void Render()
         {
             Raylib.DrawRectangleRounded(Rectangle, 5, 32, Color);
-            if(IsHovering() && Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT))
+            if (IsHovering() && Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT))
             {
                 Raylib.DrawRectangleRoundedLines(Rectangle, 5, 32, 5, ColorUtils.Lerp(Color, Color.BLACK, 0.25f));
-            } else if(IsHovering())
+            }
+            else if (IsHovering())
             {
                 Raylib.DrawRectangleRoundedLines(Rectangle, 5, 32, 5, ColorUtils.Lerp(Color, Color.BLACK, 0.75f));
             }
@@ -46,8 +47,8 @@ namespace Nadezda.Gui.Framework.Controls
 
         public override void Update()
         {
-            if(!IsHovering()) return;
-            if(!Raylib.IsMouseButtonReleased(MouseButton.MOUSE_LEFT_BUTTON)) return;
+            if (!IsHovering()) return;
+            if (!Raylib.IsMouseButtonReleased(MouseButton.MOUSE_LEFT_BUTTON)) return;
             if (OnClick != null)
             {
                 OnClick(this);
@@ -56,8 +57,8 @@ namespace Nadezda.Gui.Framework.Controls
 
         private bool IsHovering()
         {
-            Rectangle mousePos = new Rectangle(Raylib.GetMousePosition().X, Raylib.GetMousePosition().Y,0,0);           // Get the position of the mouse
-            if(!(mousePos.x >= Rectangle.x) || !(mousePos.x <= (Rectangle.x + Rectangle.width))) return false;
+            Rectangle mousePos = new Rectangle(Raylib.GetMousePosition().X, Raylib.GetMousePosition().Y, 0, 0);           // Get the position of the mouse
+            if (!(mousePos.x >= Rectangle.x) || !(mousePos.x <= (Rectangle.x + Rectangle.width))) return false;
             return mousePos.y >= Rectangle.y && mousePos.y <= Rectangle.y + Rectangle.height;
 
         }

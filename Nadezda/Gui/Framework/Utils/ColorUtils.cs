@@ -9,9 +9,11 @@ using Nadezda.Gui.Framework.Units;
 namespace Nadezda.Gui.Framework.Utils
 {
 
-    public class ColorUtils {
+    public class ColorUtils
+    {
 
-        public static Color Lerp(Color a, Color b, float t) {
+        public static Color Lerp(Color a, Color b, float t)
+        {
             return new Color(
                 (int)Math.Round(a.r + (b.r - a.r) * t),
                 (int)Math.Round(a.g + (b.g - a.g) * t),

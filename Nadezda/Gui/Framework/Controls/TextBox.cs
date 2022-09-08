@@ -52,9 +52,9 @@ namespace Nadezda.Gui.Framework.Controls
                     key = Raylib.GetCharPressed();  // Check next character in the queue
                 }
 
-                if(!Raylib.IsKeyDown(KeyboardKey.KEY_BACKSPACE)) return;
-                if(Text.Length <= 0 || deleteDeltaTime.GetDeltaTime().Milliseconds <= 50) return;
-                
+                if (!Raylib.IsKeyDown(KeyboardKey.KEY_BACKSPACE)) return;
+                if (Text.Length <= 0 || deleteDeltaTime.GetDeltaTime().Milliseconds <= 50) return;
+
                 Text = Text.Remove(Text.Length - 1, 1);
                 deleteDeltaTime = DeltaTime.CreatePoint();
             }
@@ -64,25 +64,26 @@ namespace Nadezda.Gui.Framework.Controls
         public override void Render()
         {
             Raylib.DrawRectangle((int)Rectangle.x, (int)Rectangle.y, (int)Rectangle.width, (int)Rectangle.height, ColorUtils.Lerp(Color, Color.BLACK, 0.25f));
-            Raylib.DrawRectangle((int)Rectangle.x+2, (int)Rectangle.y+2, (int)Rectangle.width-4, (int)Rectangle.height-4, Color.WHITE);
+            Raylib.DrawRectangle((int)Rectangle.x + 2, (int)Rectangle.y + 2, (int)Rectangle.width - 4, (int)Rectangle.height - 4, Color.WHITE);
             Raylib.DrawRectangleLines((int)Rectangle.x, (int)Rectangle.y, (int)Rectangle.width, (int)Rectangle.height, MouseOnText ? Color : Color.DARKGRAY);
 
-            Raylib.DrawText(Text, (int)Rectangle.x + 2, (int)Rectangle.y + 2, (int)FontSize , Color.BLACK);
+            Raylib.DrawText(Text, (int)Rectangle.x + 2, (int)Rectangle.y + 2, (int)FontSize, Color.BLACK);
 
-            if(!MouseOnText) return;
-            if(Text.Length >= MaxInputChars) return;
-            
+            if (!MouseOnText) return;
+            if (Text.Length >= MaxInputChars) return;
+
             // Draw blinking underscore char
             if (blinkDeltaTime.GetDeltaTime().Milliseconds > 500)
             {
                 Raylib.DrawText("_", (int)Rectangle.x + 2 + Raylib.MeasureText(Text, (int)FontSize), (int)Rectangle.y + 2, (int)FontSize, Color);
-            } else if(blinkDeltaTime.GetDeltaTime().Milliseconds > 1000)
+            }
+            else if (blinkDeltaTime.GetDeltaTime().Milliseconds > 1000)
             {
                 blinkDeltaTime = DeltaTime.CreatePoint();
             }
 
         }
-        
+
         private bool IsAnyKeyPressed()
         {
             bool keyPressed = false;
@@ -92,9 +93,9 @@ namespace Nadezda.Gui.Framework.Controls
 
             return keyPressed;
         }
-        
-        private string KeycodeToChar(int keyCode) 
-        { 
+
+        private string KeycodeToChar(int keyCode)
+        {
             return ((char)keyCode).ToString();
         }
     }

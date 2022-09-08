@@ -18,7 +18,8 @@ namespace Nadezda.Gui.Framework.Controls
 
         private bool _debug = false;
 
-        protected Window(Color bg, Rectangle rectangle, string title = "NadezdaUI Window", bool debug = false) {
+        protected Window(Color bg, Rectangle rectangle, string title = "NadezdaUI Window", bool debug = false)
+        {
             Title = title;
             Rectangle = rectangle;
             BackgroundColor = bg;
@@ -26,7 +27,7 @@ namespace Nadezda.Gui.Framework.Controls
         }
 
         public void Show()
-        {   
+        {
             Raylib.SetConfigFlags(ConfigFlags.FLAG_WINDOW_RESIZABLE);
             Raylib.InitWindow((int)Rectangle.width, (int)Rectangle.height, Title);
 
@@ -39,7 +40,8 @@ namespace Nadezda.Gui.Framework.Controls
             Raylib.CloseWindow();
         }
 
-        public void SetSize(Rectangle rec) {
+        public void SetSize(Rectangle rec)
+        {
             this.Rectangle = rec;
             Raylib.SetWindowSize((int)rec.width, (int)rec.height);
         }
@@ -53,9 +55,9 @@ namespace Nadezda.Gui.Framework.Controls
                 c.Render();
             }
 
-            if(_debug)
+            if (_debug)
             {
-                Raylib.DrawFPS(0,0);
+                Raylib.DrawFPS(0, 0);
             }
 
             Raylib.EndDrawing();
