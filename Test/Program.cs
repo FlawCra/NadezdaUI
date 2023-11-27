@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Nadezda.Gui.Framework.Controls;
+using NadezdaUI.Gui.Framework.Controls;
 
 #if DEBUG
 bool isDbg = true;

@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Nadezda\Nadezda.csproj" />
+      <ProjectReference Include="..\NadezdaUI\NadezdaUI.csproj" />
     </ItemGroup>
 
 </Project>

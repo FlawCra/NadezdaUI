@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nadezda", "Nadezda\Nadezda.csproj", "{0E236734-DF4C-409B-85E3-78D7A563A933}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NadezdaUI", "NadezdaUI\NadezdaUI.csproj", "{0E236734-DF4C-409B-85E3-78D7A563A933}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{CD0E9C29-BFE2-4C9A-BCBB-6F3E1D8574BA}"
 EndProject

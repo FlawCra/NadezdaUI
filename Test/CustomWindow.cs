@@ -1,10 +1,10 @@
-using Nadezda.Gui.Framework.Controls;
-using Nadezda.Gui.Framework.Lib;
-using Nadezda.Gui.Framework.Units;
+using NadezdaUI.Gui.Framework.Controls;
+using NadezdaUI.Gui.Framework.Lib;
+using NadezdaUI.Gui.Framework.Units;
 
 public class CustomWindow : Window
 {
-    public CustomWindow(bool dbg) : base(new Color(35, 35, 35, (int)byte.MaxValue), new Rectangle(0, 0, 1280, 720), "Nadezda Test", dbg)
+    public CustomWindow(bool dbg) : base(new Color(35, 35, 35, (int)byte.MaxValue), new Rectangle(0, 0, 1280, 720), "NadezdaUI Test", dbg)
     {
         Label l = new Label(new Rectangle(50, 50, 0, 0), "Example", Color.WHITE, fsize: FontSize.Large);
         Button b = new Button(new Rectangle(50, 200, 300, 50), "Button", Color.BLUE);
