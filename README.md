@@ -1,1 +1,1 @@
-# NadezdaUI
+# NadezdaUI  [![official FlawCra project](https://badges.flawcra.cc/official_flat_square)](https://github.com/FlawCra) [![Quality Gate Status](https://qube.flawcra.cc/api/project_badges/measure?project=FlawCra_NadezdaUI_AYddY999EfT4YDBWJEtW&metric=alert_status)](https://qube.flawcra.cc/dashboard?id=FlawCra_NadezdaUI_AYddY999EfT4YDBWJEtW)
