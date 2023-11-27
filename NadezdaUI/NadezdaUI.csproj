@@ -28,8 +28,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Raylib-cs" Version="4.2.0.1" />
-    <PackageReference Include="SkiaSharp" Version="2.88.3" />
+    <PackageReference Include="Raylib-cs" Version="5.0.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.6" />
   </ItemGroup>
 
 </Project>
