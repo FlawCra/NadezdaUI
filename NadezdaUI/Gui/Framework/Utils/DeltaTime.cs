@@ -12,7 +12,9 @@ public class DeltaTime
     /// <returns>A new instance of the DeltaTime class.</returns>
     public static DeltaTime CreatePoint()
     {
-        return new DeltaTime { FirstTime = DateTime.Now };
+        return new DeltaTime {
+            FirstTime = DateTime.UtcNow
+        };
     }
     /// <summary>
     /// Calculates the time difference between the current time and the stored start time.
@@ -26,9 +28,8 @@ public class DeltaTime
 
         if(FirstTime != null)
         {
-
-            return DateTime.Now - FirstTime;
+            return DateTime.UtcNow - FirstTime;
         }
-        return TimeSpan.FromSeconds(1 / 60); //If null then return 60 FPS.
+        return TimeSpan.FromSeconds((double)1 / 60); //If null then return 60 FPS.
     }
 }
