@@ -74,7 +74,7 @@ public class Button : Control
     /// </returns>
     private bool IsHovering() {
         Vector2 mousePos = Mouselib.GetMousePosition();
-        if(!(mousePos.X >= Rectangle.x) || !(mousePos.X <= (Rectangle.x + Rectangle.width))) return false;
+        if((mousePos.X < Rectangle.x) || (mousePos.X > (Rectangle.x + Rectangle.width))) return false;
         return mousePos.Y >= Rectangle.y && mousePos.Y <= Rectangle.y + Rectangle.height;
 
     }

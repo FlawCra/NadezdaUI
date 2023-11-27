@@ -5,7 +5,7 @@ namespace NadezdaUI.Gui.Framework.Lib;
 /// <summary>
 /// Keyboardlib class provides convenient access to keyboard related functionality.
 /// </summary>
-public class Keyboardlib {
+public static class Keyboardlib {
     /// <summary>
     /// Checks if a specific keyboard key is currently being pressed down.
     /// </summary>
